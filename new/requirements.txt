@@ -1,0 +1,10 @@
+opencv-python
+mediapipe
+numpy
+pandas
+matplotlib
+Pillow
+reportlab
+
+# scikit-learn not required for core features
+# tkinter is included with Python standard library

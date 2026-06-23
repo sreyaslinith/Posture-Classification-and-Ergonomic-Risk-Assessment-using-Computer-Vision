@@ -1,0 +1,9 @@
+opencv-python
+mediapipe
+numpy
+pandas
+plotly
+streamlit
+pyttsx3
+
+# sqlite3 is included in the Python standard library — no pip install needed
