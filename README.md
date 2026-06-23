@@ -1,4 +1,4 @@
-# ErgoVisionAI 
+# ErgoVisionAI
 
 ## Intelligent Workplace Ergonomics and Wellness Assistant
 
