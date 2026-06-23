@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ErgoVisionAI
 
 **Posture Classification and Ergonomic Risk Assessment using Computer Vision**
@@ -207,3 +208,6 @@ Both files are created automatically on first run and updated during each sessio
 ## License
 
 Educational / academic use — IIIT Project.
+=======
+# Posture-Classification-and-Ergonomic-Risk-Assessment-using-Computer-Vision
+>>>>>>> a62bade2a129374b809fea6946f98505de91d17a
