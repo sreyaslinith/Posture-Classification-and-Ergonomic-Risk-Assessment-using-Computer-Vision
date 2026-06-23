@@ -1,4 +1,4 @@
-# ErgoVisionAI
+# ErgoVisionAI 
 
 ### AI-Powered Posture Classification & Ergonomic Risk Assessment using Computer Vision
 
