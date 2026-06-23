@@ -1,124 +1,142 @@
 # ErgoVisionAI 
 
-### AI-Powered Posture Classification & Ergonomic Risk Assessment using Computer Vision
+## Intelligent Workplace Ergonomics and Wellness Assistant
 
-> An intelligent workplace ergonomics assistant that monitors posture in real time, detects unhealthy sitting habits, provides instant feedback, and generates wellness analytics.
+ErgoVisionAI is a computer vision application that monitors workplace ergonomics in real time using a standard webcam. The system analyzes sitting posture, tracks blink rate and yawning frequency, calculates an overall wellness score, and generates session reports with visual analytics.
 
----
-
-## Project Overview
-
-ErgoVisionAI is a computer vision application that helps users maintain healthy sitting posture during long working hours.
-
-Using AI-powered pose estimation, the system continuously analyzes body posture through a webcam or video input, classifies ergonomic risk, records posture history, provides real-time alerts, and generates wellness reports.
-
-This project demonstrates practical applications of Computer Vision, Human Pose Estimation, Human-Computer Interaction, and AI-assisted workplace wellness.
+The project was developed to demonstrate how AI and computer vision can be applied to improve workplace health and reduce ergonomic risks through continuous monitoring and actionable feedback.
 
 ---
 
-## Key Features
+## Features
 
-### Real-Time Posture Detection
-
-* Live webcam posture monitoring
-* Video file analysis
-* MediaPipe pose estimation
-* Skeleton visualization
-
-### Ergonomic Risk Assessment
-
-* Neck and back angle calculation
-* Good / Okay / Bad posture classification
-* Posture score (0–100)
-* Sitting duration tracking
-* Bad posture counter
-
-### Smart Alerts
-
-* Visual posture warning
-* Voice reminders
-* Continuous bad posture monitoring
-
-### Data Analytics
-
-* SQLite database logging
-* CSV session history
-* Session analytics
-* Interactive dashboard
-
-### Professional UI
-
-* Modern dark theme
-* Real-time HUD
-* FPS monitoring
-* Clean OpenCV interface
+- Real-time posture detection using MediaPipe Pose
+- Live posture classification and ergonomic risk assessment
+- Blink detection for eye strain monitoring
+- Yawn detection for fatigue analysis
+- Wellness score calculation based on multiple health indicators
+- Voice and visual posture alerts
+- SQLite database for session storage
+- CSV session logging
+- Interactive analytics dashboard
+- Automatic PDF health report generation
+- Support for both live webcam and recorded video input
 
 ---
 
-## Tech Stack
+## Demo
 
-| Category         | Technologies      |
-| ---------------- | ----------------- |
-| Programming      | Python            |
-| Computer Vision  | OpenCV, MediaPipe |
-| Machine Learning | Pose Estimation   |
-| Data Processing  | NumPy, Pandas     |
-| Database         | SQLite            |
-| Dashboard        | Streamlit         |
-| Visualization    | Plotly            |
-| Alerts           | pyttsx3           |
-| Version Control  | Git & GitHub      |
+The application provides:
+
+- Live webcam monitoring
+- Skeleton visualization
+- Posture angle measurement
+- Blink and yawn tracking
+- Wellness dashboard
+- Session analytics
+- Exportable PDF reports
+
+Screenshots and demo videos can be found inside the **assets/** directory.
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
 ErgoVisionAI/
 │
+├── assets/
+├── models/
+│
 ├── app.py
 ├── pose_detection.py
 ├── posture.py
+├── blink_detector.py
+├── yawn_detector.py
 ├── alerts.py
 ├── database.py
 ├── dashboard.py
+├── report_generator.py
+├── wellness_calculator.py
 ├── utils.py
+│
 ├── requirements.txt
 ├── README.md
-│
-├── assets/
-│   ├── screenshots/
-│   └── demo.gif
-│
-├── posture.db
-└── posture_history.csv
+└── .gitignore
 ```
 
 ---
 
-## Installation
+# Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Programming Language | Python |
+| Computer Vision | OpenCV |
+| Pose Estimation | MediaPipe |
+| Numerical Computing | NumPy |
+| Data Processing | Pandas |
+| Database | SQLite |
+| Dashboard | Streamlit |
+| Report Generation | Matplotlib, ReportLab |
+| Voice Alerts | pyttsx3 |
+
+---
+
+# Installation
+
+Clone the repository
 
 ```bash
 git clone https://github.com/sreyaslinith/Posture-Classification-and-Ergonomic-Risk-Assessment-using-Computer-Vision.git
+```
 
+Move into the project directory
+
+```bash
 cd Posture-Classification-and-Ergonomic-Risk-Assessment-using-Computer-Vision
+```
 
+Create a virtual environment
+
+```bash
 python -m venv venv
+```
 
-# Windows
+Activate it
+
+Windows
+
+```bash
 venv\Scripts\activate
+```
 
+Linux/macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## Running the Project
+# Running the Application
 
 ### Webcam Mode
 
 ```bash
 python app.py
+```
+
+or
+
+```bash
+python app.py --mode webcam
 ```
 
 ### Video Mode
@@ -127,96 +145,92 @@ python app.py
 python app.py --mode video --file sample.mp4
 ```
 
-### Dashboard
+---
+
+# Dashboard
+
+Launch the analytics dashboard using Streamlit.
 
 ```bash
 streamlit run dashboard.py
 ```
 
+The dashboard provides
+
+- Posture statistics
+- Session duration
+- Wellness score
+- Interactive charts
+- Historical analysis
+
 ---
 
-## System Workflow
+# Posture Classification
+
+The application measures the angle formed between the ear, shoulder, and hip landmarks.
+
+| Angle | Classification |
+|-------|----------------|
+| Greater than 165° | Good |
+| 150° – 165° | Moderate |
+| Less than 150° | Poor |
+
+If poor posture is detected continuously, the application generates visual and voice reminders.
+
+---
+
+# Reports
+
+After each monitoring session, the system can generate
+
+- Session summary
+- Wellness score
+- Blink statistics
+- Fatigue analysis
+- Posture statistics
+- Graphical visualizations
+- PDF report
+
+---
+
+# Output Files
+
+During execution, the application generates
 
 ```text
-Webcam / Video
-        │
-        ▼
- MediaPipe Pose Detection
-        │
-        ▼
- Landmark Extraction
-        │
-        ▼
- Angle Calculation
-        │
-        ▼
- Posture Classification
-        │
-        ├── Good
-        ├── Okay
-        └── Bad
-        │
-        ▼
- Alert System
-        │
-        ▼
- Database Logging
-        │
-        ▼
- Analytics Dashboard
+posture.db
+session_data.csv
+graphs/
+reports/
 ```
 
----
-
-## Sample Output
-
-* Real-time skeleton overlay
-* Posture angle measurement
-* Ergonomic posture score
-* Sitting duration
-* Bad posture alerts
-* Session history
-* Analytics dashboard
-
-*(Add screenshots or GIFs inside the `assets/` folder.)*
+These files are created automatically after a monitoring session.
 
 ---
 
-## Future Improvements
+# Future Improvements
 
-* Blink detection
-* Yawn detection
-* Wellness score
-* AI health recommendations
-* PDF report generation
-* Multi-user profiles
-* Cloud database
-* Mobile application
-* Deep learning posture classifier
+Future versions of the project may include
 
----
-
-## Skills Demonstrated
-
-* Computer Vision
-* Human Pose Estimation
-* Machine Learning
-* Python Development
-* OpenCV
-* Data Analytics
-* Software Engineering
-* Human-Centered AI
+- Multi-person posture monitoring
+- Deep learning posture classification
+- Cloud database integration
+- Mobile application support
+- Real-time team analytics
+- Personalized ergonomic recommendations
 
 ---
 
-## Contributors
+# Contributors
 
-* **Sreyas Linith** – Machine Learning, Computer Vision, System Development
+This project is actively maintained by
 
-Contributions from collaborators are welcome.
+**Sreyas Linith**
+
+Contributions, suggestions, and improvements are welcome through Issues and Pull Requests.
 
 ---
 
-## License
+# License
 
 This project is intended for educational, research, and portfolio purposes.
